@@ -62,10 +62,12 @@ function App() {
 	}
 
 	const handleSignOut = () => {
-		localStorage.removeItem('jwt');
-		history.push('/sign-in');
+		if (loggedIn === true) {
+			localStorage.removeItem('jwt');
+			history.push('/sign-in');
+		}
 	}
-
+	
 	const tokenCheck = () => {
 		if (localStorage.getItem('jwt')) {
 			const token = localStorage.getItem('jwt');
