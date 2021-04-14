@@ -19,7 +19,7 @@ const Header = ({userEmail, onSignOut}) => {
 				<Link to={
 					location.pathname === "/sign-up" ? "/sign-in" : location.pathname === "/sign-in" ? "/sign-up" : "/sign-in"
 				}
-				className="header__link header__link_logout" onClick={location.pathname === "/" ? onSignOut : () => {}}>
+				className="header__link header__link_logout" onClick={onSignOut}>
 					{
 					location.pathname === "/sign-up" ? "Войти" : location.pathname === "/sign-in" ? "Регистрация" : "Выйти"
 					}
